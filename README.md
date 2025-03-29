@@ -131,8 +131,6 @@ Once the backend is running, access the interactive API documentation at:
 - `DELETE /chats/{conversation_id}` - Delete a conversation
 - `WebSocket /chats/ws/{client_id}` - Real-time chat connection
 
-## Development
-
 ### Project Structure
 
 ```
@@ -141,11 +139,14 @@ Once the backend is running, access the interactive API documentation at:
 │   │   ├── config.py         # Configuration settings
 │   │   ├── database.py       # Database connections
 │   │   ├── main.py          # FastAPI application
-│   │   ├── models/          # Data models
+│   │   ├── models/          # Data models and schemas
 │   │   ├── routes/          # API endpoints
-│   │   └── services/        # Business logic
+│   │   ├── services/        # Business logic
+│   │   └── streamlit_app.py # Streamlit dashboard application
 ├── frontend/
-│   └── app.py              # Streamlit application
+│   └── app.py              # Streamlit chat interface
 ├── Dockerfile              # Container configuration
+├── docker-compose.yml      # Multi-container orchestration
+├── supervisord.conf        # Process management config
 └── requirements.txt        # Python dependencies
 ```
