@@ -1,6 +1,6 @@
 # ChatInsight - Chat Summarization and Insights Platform
 
-A powerful platform that combines a FastAPI backend with a Streamlit frontend to process chat data, generate summaries, and provide real-time insights using Google's Gemini API.
+A powerful platform that combines a FastAPI backend with a Streamlit frontend to process chat data, generate summaries, and provide real-time insights using Google's Gemini API. The platform offers a seamless chat experience with advanced AI-powered features for message analysis and summarization.
 
 ## Features
 
@@ -8,9 +8,12 @@ A powerful platform that combines a FastAPI backend with a Streamlit frontend to
 - MongoDB-based chat storage and retrieval
 - Advanced chat summarization using Gemini API
 - Sentiment analysis and keyword extraction
-- Streamlit-based interactive UI
+- Streamlit-based interactive UI with real-time updates
 - RESTful API endpoints for chat operations
 - Efficient pagination and filtering capabilities
+- Message search and date-based filtering
+- Conversation management with unique IDs
+- User-friendly interface with customizable settings
 
 ## Architecture
 
@@ -81,9 +84,26 @@ ChatInsight follows a microservices architecture with two main components:
    ```
 
 2. Run the container:
+
    ```bash
    docker run -p 8000:8000 -p 8501:8501 chatinsight
    ```
+
+3. Using Docker Compose (recommended):
+   ```bash
+   docker-compose up -d
+   ```
+   This will start both the FastAPI backend and Streamlit frontend services with proper networking and environment configuration.
+
+### Configuration
+
+The application can be configured through environment variables or a `.env` file:
+
+- `MONGODB_URL`: MongoDB connection string (required)
+- `GEMINI_API_KEY`: Google Gemini API key for AI features (required)
+- `API_URL`: Backend API URL (default: http://localhost:8000)
+- `DEBUG`: Enable debug mode (default: false)
+- `LOG_LEVEL`: Logging level (default: info)
 
 ## Usage
 

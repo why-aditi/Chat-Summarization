@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, Query, WebSocket, WebSocketDisconnect
+from fastapi import APIRouter, HTTPException, Query
 from typing import List, Optional
 from datetime import datetime
 from ..models.chat import ChatMessage, ChatSummary, ChatSummarizeRequest, PaginatedResponse
@@ -66,23 +66,3 @@ async def delete_conversation(conversation_id: str):
         return {"message": "Conversation deleted successfully"}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-# WebSocket endpoint for real-time chat
-@router.websocket("/ws/{client_id}")
-async def websocket_endpoint(websocket: WebSocket, client_id: str):
-    await websocket.accept()
-    try:
-        while True:
-            # Receive message from client
-            data = await websocket.receive_json()
-            
-            # Create chat message
-            message = ChatMessage(**data)
-            saved_message = await chat_service.create_message(message)
-            
-            # Send confirmation back to client
-            await websocket.send_json(saved_message.model_dump())
-    except WebSocketDisconnect:
-        await websocket.close()
-    except Exception as e:
-        await websocket.close(code=1001, reason=str(e))
