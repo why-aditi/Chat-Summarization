@@ -1,4 +1,4 @@
-# Concisio - Chat Summarization and Insights Platform
+# ChatInsight - Chat Summarization and Insights Platform
 
 A powerful platform that combines a FastAPI backend with a Streamlit frontend to process chat data, generate summaries, and provide real-time insights using Google's Gemini API.
 
@@ -14,7 +14,7 @@ A powerful platform that combines a FastAPI backend with a Streamlit frontend to
 
 ## Architecture
 
-Concisio follows a microservices architecture with two main components:
+ChatInsight follows a microservices architecture with two main components:
 
 ### Backend (FastAPI)
 
@@ -45,8 +45,8 @@ Concisio follows a microservices architecture with two main components:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/concisio.git
-   cd concisio
+   git clone https://github.com/yourusername/chatinsight.git
+   cd chatinsight
    ```
 
 2. Create and activate a virtual environment:
@@ -77,12 +77,12 @@ Concisio follows a microservices architecture with two main components:
 1. Build the Docker image:
 
    ```bash
-   docker build -t concisio .
+   docker build -t chatinsight .
    ```
 
 2. Run the container:
    ```bash
-   docker run -p 8000:8000 -p 8501:8501 concisio
+   docker run -p 8000:8000 -p 8501:8501 chatinsight
    ```
 
 ## Usage

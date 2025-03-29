@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  chatinsight:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000" # FastAPI backend
+      - "8501:8501" # Streamlit frontend
+    environment:
+      - MONGODB_URL=${MONGODB_URL}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    volumes:
+      - ./backend:/app/backend
+      - ./frontend:/app/frontend
+    networks:
+      - chatinsight-network
+
+networks:
+  chatinsight-network:
+    driver: bridge
