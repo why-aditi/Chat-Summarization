@@ -45,7 +45,7 @@ ChatInsight follows a microservices architecture with two main components:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/chatinsight.git
+   git clone https://github.com/why-aditi/chatinsight.git
    cd chatinsight
    ```
 
