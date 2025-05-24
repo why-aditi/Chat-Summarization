@@ -4,7 +4,6 @@ A powerful platform that combines a FastAPI backend with a Streamlit frontend to
 
 ## Features
 
-- Real-time chat processing with WebSocket support
 - MongoDB-based chat storage and retrieval
 - Advanced chat summarization using Gemini API
 - Sentiment analysis and keyword extraction
