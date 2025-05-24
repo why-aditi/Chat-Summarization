@@ -22,7 +22,6 @@ ChatInsight follows a microservices architecture with two main components:
 ### Backend (FastAPI)
 
 - RESTful API endpoints for chat operations
-- WebSocket server for real-time communication
 - MongoDB integration for data persistence
 - Gemini API integration for AI-powered features
 - Asynchronous processing for improved performance
